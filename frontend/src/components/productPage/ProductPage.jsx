@@ -20,7 +20,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get(`${window.location.origin}/api/product/list?page=${currentPage}&limit=6`);
+                const response = await axios.get(`https://ecomersebackend-r961.onrender.com/api/product/list?page=${currentPage}&limit=6`);
                 setCategories(response.data.data);
                 setTotalPages(response.data.totalPages);
             } catch (error) {
@@ -40,7 +40,7 @@ const ProductPage = () => {
 
     const saveInterests = async () => {
         try {
-            await axios.post(`${window.location.origin}/api/user/saveInterest`, {
+            await axios.post('https://ecomersebackend-r961.onrender.com/api/user/saveInterest', {
                 _id,
                 selectedCategories: interestedCategories,
             });

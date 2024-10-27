@@ -13,12 +13,14 @@ const StorecontextProvider = (props) => {
   const [userId, setUserId] = useState(
     localStorage.getItem("userId") || ""
   );
+  const [email,setEmail]=useState('');
 
   // Save user state to local storage whenever it changes
   useEffect(() => {
     localStorage.setItem("userLogin", JSON.stringify(userLogin));
     localStorage.setItem("userName", userName);
     localStorage.setItem("userId", userId);
+
   }, [userLogin, userId, userName]);
 
   const contextValue = {
@@ -28,6 +30,8 @@ const StorecontextProvider = (props) => {
     setUserId,
     userName,
     setUserName,
+    email,
+    setEmail
   };
 
   return (

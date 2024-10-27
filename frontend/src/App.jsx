@@ -20,9 +20,12 @@ function App() {
         <Route path="/signup" element={<SignUpForm/>} /> 
         <Route path="/verify" element={<VerifyEmail/>}/>
         <Route path="/login" element={<Login/>}/>
+
+
+
         <Route path="/product" element={<PrivateRoute />}>
           <Route path="" element={<ProductPage />} />
-        </Route>
+        </Route> 
         
         
       </Routes>

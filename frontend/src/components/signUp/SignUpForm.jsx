@@ -3,7 +3,7 @@
 
 import React, { useContext, useState } from "react";
 import "./SignUpForm.css";
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,7 +16,7 @@ const SignUpForm = () => {
     password: ""
   });
 
-  const{userLogin,setUserLogin,userId,setUserId,setUserName}=useContext(Storecontext)
+  const{userLogin,setUserLogin,userId,setUserId,setUserName,email,setEmail}=useContext(Storecontext)
 
   const navigate = useNavigate();
 
@@ -26,6 +26,7 @@ const SignUpForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -33,7 +34,7 @@ const SignUpForm = () => {
     const loadingToast = toast.loading("Creating your account...");
   
     try {
-      const response = await axios.post(`${window.location.origin}/api/user/signup`, formData);
+      const response = await axios.post(`https://ecomersebackend-r961.onrender.com/api/user/signup`, formData);
       
      
       toast.dismiss(loadingToast);
@@ -41,24 +42,22 @@ const SignUpForm = () => {
       if (response.data.Success) {
         toast.success("Signup successful! Please check your email for the verification code.");
         
-        // Set user information
+        
         setUserId(response.data.data.data.userId);
-        setUserName(formData.name); 
+        setUserName(formData.name); // Use formData.name to get the name from the state
+        setEmail(formData.email)
   
         navigate("/verify"); 
       } else {
         toast.error(response.data.message);
       }
     } catch (error) {
-      
+     
       toast.dismiss(loadingToast);
       toast.error("Failed to create an account. Please try again.");
     }
   };
   
-
-  
-
 
   return (
     <div className="signup-container">
@@ -105,7 +104,7 @@ const SignUpForm = () => {
           </button>
         </form>
         <p>
-          Have an account? <a href="/login">Login</a>
+          Have an account? <NavLink to={'/login'}>Login</NavLink>
         </p>
       </div>
     </div>

@@ -3,7 +3,7 @@
 import React, { useState, useRef,useContext } from 'react';
 import './VerifyEmail.css';
 import { Storecontext } from '../../context/StoreContext';
-import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,8 +13,7 @@ function VerifyEmail() {
   const [code, setCode] = useState(Array(6).fill(""));
   const inputsRef = useRef([]);
   const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
-  const{userLogin,setUserLogin,}=useContext(Storecontext)
-  const navigate = useNavigate();
+  const{userLogin,setUserLogin,email}=useContext(Storecontext)
   
   // Handle input change
   const handleInputChange = (e, index) => {
@@ -57,7 +56,7 @@ function VerifyEmail() {
     const otp = code.join(''); 
 
     try {
-      const response = await axios.post(`${window.location.origin}/api/user/verifyOTP`, {
+      const response = await axios.post('https://ecomersebackend-r961.onrender.com/api/user/verifyOTP', {
         userId,
         otp
       });
@@ -65,9 +64,9 @@ function VerifyEmail() {
       if (response.data.status === "VERIFIED") {
         setUserLogin(true)
         toast.success("Email verified successfully!");
-        // localStorage.removeItem('userId'); 
+        localStorage.removeItem('userId'); 
         
-        navigate("/login");
+        window.location.href = "/product"; 
       } else {
         toast.error(response.data.message);
       }
@@ -81,7 +80,7 @@ function VerifyEmail() {
     <div className="verify-email-container">
     <ToastContainer/>
       <h2>Verify your email</h2>
-      <p>Enter the 8-digit code you have received on <strong>dev***@revispy.com</strong></p>
+      <p>Enter the 8-digit code you have received on <strong>{email}</strong></p>
       <form onSubmit={handleSubmit}>
         <div className="code-inputs">
           {code.map((digit, index) => (
