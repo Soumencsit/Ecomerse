@@ -1,0 +1,123 @@
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  background-color: #ffffff;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Login form title */
+
+.login-box h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+.login-box h2 {
+ 
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 1rem 0 0.1rem 0;
+}
+
+/* Text below the title */
+.login-box p {
+  margin: 0.1rem 0 1rem 0;
+  color: #666;
+}
+
+/* Grouping for form inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Label for inputs */
+.input-group label {
+  font-size: 1rem;
+  text-align: left;
+  color: #333;
+}
+
+/* Input fields */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Show button next to password input */
+.show-btn {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1rem;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+}
+
+.show-btn:hover {
+  text-decoration: underline;
+}
+
+/* Submit button for login */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Hover effect for login button */
+.login-btn:hover {
+  background-color: #333;
+}
+
+/* Signup link styling */
+.signup-link {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Sign-up link */
+.signup-link a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

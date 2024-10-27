@@ -1,0 +1,76 @@
+.helpbar-right {
+    padding: 1rem  2.5rem 0.2rem 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem; 
+  }
+  
+  .helpbar-right .help-link {
+    text-decoration: none; /* Remove the underline */
+  }
+  
+  .helpbar-right .help-link p {
+    font-size: 1rem;
+    margin: 0; /* Remove any default margins */
+    text-decoration: none; /* Remove underline */
+    color: rgba(0, 0, 0, 0.585); 
+    font-weight: 500; /* Ensure consistent font weight */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the button to look like the text for equal label */
+  .helpbar-right .help-link button {
+    font-size: 1rem;
+    padding: 0.3rem 1rem; 
+    border: none;
+    background-color: black; 
+    color: white; 
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+  
+  /* Remove button outline on focus */
+  .helpbar-right .help-link button:focus {
+    outline: none;
+  }
+  
+  /* Hover effect for the links and button */
+  .helpbar-right .help-link:hover p {
+    color: rgb(4, 4, 4); 
+  }
+  
+  .helpbar-right .help-link button:hover {
+    background-color: gray; 
+  }
+
+  .sign-out{
+    display: flex;
+    gap: 10px;
+  }
+  .sign-out p{
+    margin-top:0.3rem;
+    color: black;
+  }
+  .sign-out button{
+    font-size: 1rem;
+    padding: 0.3rem 1rem; 
+    border: none;
+    background-color: black; 
+    color: white; 
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+  .sign-out button:hover{
+    background-color: grey;
+  }
+
+
+  

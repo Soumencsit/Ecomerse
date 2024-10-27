@@ -1,0 +1,18 @@
+.promo-banner {
+    
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .promo-banner span {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .promo-banner span:hover {
+    text-decoration: underline;
+  }
+  
